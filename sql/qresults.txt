@@ -1,0 +1,135 @@
+date: 2023-10-03
+DRUID
+
+.\run-app.bat .\sql\druid\query12.sql
+
+Query:
+SELECT c.category_name, c.description
+FROM northwind_d.categories c
+LIMIT 1
+
+
+{
+  "success" : "true",
+  "message" : "SQL query was created and result was fetched successfully.",
+  "status" : "200",
+  "errorCode" : null,
+  "data" : {
+    "queryId" : "F7D0.845C.2023.1003.1552.31.586.007",
+    "execTimeSec" : 0.626,
+    "column" : [ "category_name", "description" ],
+    "numRows" : 1,
+    "rows" : [ {
+      "row" : [ "Beverages", "Soft drinks, coffees, teas, beers, and ales" ]
+    } ]
+  }
+}
+
+.\run-app.bat .\sql\druid\query12.sql
+
+SELECT c.category_name, c.description
+FROM northwind_d.categories c
+WHERE category_id = '7'
+
+{
+  "success" : "true",
+  "message" : "SQL query was created and result was fetched successfully.",
+  "status" : "200",
+  "errorCode" : null,
+  "data" : {
+    "queryId" : "A2F7.CD1D.2023.1003.1602.18.272.002",
+    "execTimeSec" : 0.863,
+    "column" : [ "category_name", "description" ],
+    "numRows" : 1,
+    "rows" : [ {
+      "row" : [ "Produce", "Dried fruit and bean curd" ]
+    } ]
+  }
+}
+
+
+
+ELASTICSEARCH
+
+.\run-app.bat .\sql\elasticsearch\query20.sql
+
+Query:
+SELECT _MAP['CategoryName'], _MAP['Description']
+FROM northwind_e.categories
+
+
+{
+  "success" : "true",
+  "message" : "SQL query was created and result was fetched successfully.",
+  "status" : "200",
+  "errorCode" : null,
+  "data" : {
+    "queryId" : "F7D0.845C.2023.1003.1554.51.099.008",
+    "execTimeSec" : 0.331,
+    "column" : [ "EXPR$0", "EXPR$1" ],
+    "numRows" : 8,
+    "rows" : [ {
+      "row" : [ "Beverages", "Soft drinks, coffees, teas, beers, and ales" ]
+    }, {
+      "row" : [ "Condiments", "Sweet and savory sauces, relishes, spreads, and seasonings" ]
+    }, {
+      "row" : [ "Confections", "Desserts, candies, and sweet breads" ]
+    }, {
+      "row" : [ "Dairy Products", "Cheeses" ]
+    }, {
+      "row" : [ "Grains/Cereals", "Breads, crackers, pasta, and cereal" ]
+    }, {
+      "row" : [ "Meat/Poultry", "Prepared meats" ]
+    }, {
+      "row" : [ "Produce", "Dried fruit and bean curd" ]
+    }, {
+      "row" : [ "Seafood", "Seaweed and fish" ]
+    } ]
+  }
+}
+
+.\run-app.bat .\sql\elasticsearch\query20.sql
+
+SELECT _MAP['CategoryName'], _MAP['Description']
+FROM northwind_e.categories
+WHERE _MAP['CategoryID'] = '7'
+
+{
+  "success" : "true",
+  "message" : "SQL query was created and result was fetched successfully.",
+  "status" : "200",
+  "errorCode" : null,
+  "data" : {
+    "queryId" : "F7D0.845C.2023.1003.1559.10.467.010",
+    "execTimeSec" : 0.402,
+    "column" : [ "EXPR$0", "EXPR$1" ],
+    "numRows" : 1,
+    "rows" : [ {
+      "row" : [ "Produce", "Dried fruit and bean curd" ]
+    } ]
+  }
+}
+
+MONGODB
+.\run-app.bat .\sql\mongodb\query41.sql
+SELECT _MAP['CategoryID'], _MAP['Description']
+FROM northwind_f.categories
+WHERE _MAP['CategoryID'] = '7'
+
+
+{
+  "success" : "true",
+  "message" : "SQL query was created and result was fetched successfully.",
+  "status" : "200",
+  "errorCode" : null,
+  "data" : {
+    "queryId" : "F7D0.845C.2023.1003.1555.53.751.009",
+    "execTimeSec" : 0.4,
+    "column" : [ "EXPR$0", "EXPR$1" ],
+    "numRows" : 1,
+    "rows" : [ {
+      "row" : [ "7", "Dried fruit and bean curd" ]
+    } ]
+  }
+}
+

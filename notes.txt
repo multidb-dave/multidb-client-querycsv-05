@@ -1,0 +1,7 @@
+https://www.geeksengine.com/database/problem-solving/northwind-queries-part-1.php
+
+https://www.geeksengine.com/database/problem-solving/northwind-queries-part-2.php
+
+date: 2023-08-20
+
+https://github.com/Musili-Adebayo/Northwind-Database/blob/main/Answers%20to%2050%20Northwind%20Practice%20Queries%20using%20MySQL.pdf

@@ -1,0 +1,4 @@
+{
+	"email":"multidbuser@onesql.com",
+	"password":"Mdb2023xyzbcd"
+}
